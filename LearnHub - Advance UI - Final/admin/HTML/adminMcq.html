@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LearnHub | MCQs</title>
+    <link rel="stylesheet" href="../CSS/adminDashboard.css">
+    <link rel="stylesheet" href="../../Assets/footer.css">
+
+</head>
+
+<body data-page="mcq">
+
+<header class="admin-header">
+    <div class="admin-header-content">
+        <div>
+            <h1>MCQs</h1>
+            <p>Create and update quiz questions.</p>
+        </div>
+        <button class="logout-btn" onclick="logoutAdmin()">Logout</button>
+    </div>
+    <nav class="admin-nav">
+        <a href="../HTML/admindashboard.html">Overview</a>
+        <a href="../HTML/adminCategories.html">Categories</a>
+        <a href="../HTML/adminCourses.html">Courses</a>
+        <a href="../HTML/adminContent.html">Content</a>
+        <a href="../HTML/adminMcq.html" class="active">MCQs</a>
+        <a href="../HTML/adminPurchases.html">Premium</a>
+        <a href="../HTML/adminFeedback.html">Feedback</a>
+        <a href="../HTML/adminUsers.html">Users</a>
+    </nav>
+</header>
+
+<main class="admin-container">
+    <section class="admin-section">
+        <div class="section-header">
+            <h2>Manage MCQs</h2>
+            <p>Attach questions to lessons and update when needed.</p>
+        </div>
+        <div class="form-grid">
+            <select id="mcqContentSelect">
+                <option value="">Select Chapter</option>
+            </select>
+        </div>
+        <div id="mcqContainer" class="mcq-editor"></div>
+        <div class="button-row">
+            <button id="mcqEditBtn" class="btn ghost" type="button">Edit MCQs</button>
+            <button onclick="saveMCQs()" class="btn primary">Save MCQs</button>
+            <button onclick="updateMCQs()" class="btn success">Update MCQs</button>
+        </div>
+    </section>
+</main>
+
+<script src="../JS/adminDashboard.js"></script>
+    <footer class="site-footer">
+        <div class="footer-main">
+            <span>&copy; <span class="current-year"></span> All rights reserved LearnHub</span>
+        </div>
+        <nav class="footer-links">
+            <a href="../../user/HTML/about.html">About Us</a>
+            <a href="../../user/HTML/contact.html">Contact Us</a>
+            <a href="../../user/HTML/feedback.html">Feedback</a>
+        </nav>
+    </footer>
+
+    <script src="../../Assets/footer.js"></script>
+</body>
+</html>
+
+
+

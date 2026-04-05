@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LearnHub | Feedbacks</title>
+    <link rel="stylesheet" href="../CSS/adminDashboard.css">
+    <link rel="stylesheet" href="../../Assets/footer.css">
+
+</head>
+
+<body data-page="feedback">
+
+<header class="admin-header">
+    <div class="admin-header-content">
+        <div>
+            <h1>User Feedbacks</h1>
+            <p>Review feedback submitted by students.</p>
+        </div>
+        <button class="logout-btn" onclick="logoutAdmin()">Logout</button>
+    </div>
+    <nav class="admin-nav">
+        <a href="../HTML/admindashboard.html">Overview</a>
+        <a href="../HTML/adminCategories.html">Categories</a>
+        <a href="../HTML/adminCourses.html">Courses</a>
+        <a href="../HTML/adminContent.html">Content</a>
+        <a href="../HTML/adminMcq.html">MCQs</a>
+        <a href="../HTML/adminPurchases.html">Premium</a>
+        <a href="../HTML/adminFeedback.html" class="active">Feedback</a>
+        <a href="../HTML/adminUsers.html">Users</a>
+    </nav>
+</header>
+
+<main class="admin-container">
+    <section class="admin-section">
+        <div class="section-header">
+            <h2>Feedback Submissions</h2>
+            <p>Latest feedback appears first.</p>
+        </div>
+        <div class="table-container">
+            <table>
+                <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>User</th>
+                    <th>Course</th>
+                    <th>Content</th>
+                    <th>Feedback</th>
+                </tr>
+                </thead>
+                <tbody id="feedbackTableBody"></tbody>
+            </table>
+        </div>
+    </section>
+</main>
+
+<script src="../JS/adminDashboard.js"></script>
+    <footer class="site-footer">
+        <div class="footer-main">
+            <span>&copy; <span class="current-year"></span> All rights reserved LearnHub</span>
+        </div>
+        <nav class="footer-links">
+            <a href="../../user/HTML/about.html">About Us</a>
+            <a href="../../user/HTML/contact.html">Contact Us</a>
+            <a href="../../user/HTML/feedback.html">Feedback</a>
+        </nav>
+    </footer>
+
+    <script src="../../Assets/footer.js"></script>
+</body>
+</html>
+

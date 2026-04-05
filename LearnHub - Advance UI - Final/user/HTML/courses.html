@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LearnHub | Courses</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../CSS/home.css">
+    <link rel="stylesheet" href="../../Assets/footer.css">
+
+</head>
+
+<body data-page="courses">
+
+    <header class="top-header">
+        <div class="header-left">
+            <h1>Courses</h1>
+            <p class="header-subtitle">Enroll or subscribe to unlock lessons.</p>
+        </div>
+
+        <div class="user-menu">
+            <button id="userBtn"></button>
+            <div class="dropdown">
+                <a href="../HTML/home.html">Dashboard</a>
+                <a href="../HTML/categories.html">Categories</a>
+                <a href="../HTML/userProfile.html">Profile</a>
+                <a href="#" onclick="logoutUser()">Logout</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div id="courseNotice" class="notice hidden"></div>
+        <section class="section reveal">
+            <h3>Category: <span id="categoryTitle">Selected Category</span></h3>
+            <div class="section-toolbar">
+                <div class="search-field">
+                    <input type="text" id="courseSearch" placeholder="Search courses in this category">
+                    <button class="clear-btn" id="clearSearch" type="button">Clear</button>
+                </div>
+                <a class="btn ghost-btn" href="../HTML/categories.html">Change Category</a>
+            </div>
+            <div id="courseContainer" class="card-grid"></div>
+            <div id="courseEmpty" class="empty-state hidden">No courses match your search.</div>
+        </section>
+    </div>
+
+    <div id="decisionModal" class="modal">
+        <div class="modal-backdrop" data-decision-close></div>
+        <div class="modal-card">
+            <button class="modal-close" type="button" data-decision-close>Close</button>
+            <div class="modal-header">
+                <h3 id="decisionTitle">Confirm</h3>
+                <p id="decisionMessage" class="modal-desc">Message</p>
+            </div>
+            <div class="modal-actions">
+                <button id="decisionConfirmBtn" class="btn hero-btn" type="button">Yes</button>
+                <button id="decisionCancelBtn" class="btn ghost-btn" type="button" data-decision-close>No</button>
+            </div>
+        </div>
+    </div>
+
+    <button id="backToTop" class="back-to-top" aria-label="Back to top">Top</button>
+
+    <script src="../JS/home.js"></script>
+    <footer class="site-footer">
+        <div class="footer-main">
+            <span>&copy; <span class="current-year"></span> All rights reserved LearnHub</span>
+        </div>
+        <nav class="footer-links">
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact Us</a>
+            <a href="feedback.html">Feedback</a>
+        </nav>
+    </footer>
+
+    <script src="../../Assets/footer.js"></script>
+</body>
+
+</html>
+
+

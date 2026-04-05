@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LearnHub | Student Dashboard</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../CSS/home.css">
+    <link rel="stylesheet" href="../../Assets/footer.css">
+
+</head>
+
+<body data-page="dashboard">
+
+    <header class="top-header">
+        <div class="header-left">
+            <h1>Student Dashboard</h1>
+            <p class="header-subtitle">Your learning map, progress, and quizzes in one place.</p>
+        </div>
+
+        <div class="user-menu">
+            <button id="userBtn"></button>
+            <div class="dropdown">
+                <a href="../HTML/userProfile.html">Profile</a>
+                <a href="#" onclick="logoutUser()">Logout</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <section class="hero reveal">
+            <div class="hero-content">
+                <div class="hero-badge">LearnHub Student Space</div>
+                <h2 class="hero-title">Welcome, <span id="welcomeName">Student</span></h2>
+                <p class="hero-subtitle">
+                    Use this dashboard to move through the learning flow step by step.
+                </p>
+                <div class="hero-actions">
+                    <a class="btn hero-btn" href="../HTML/categories.html">Start with Categories</a>
+                    <a class="btn ghost-btn" href="../HTML/userProfile.html">Open Profile</a>
+                </div>
+            </div>
+            <div class="hero-panel">
+                <div class="panel-card">
+                    <h3>Your Progress Snapshot</h3>
+                    <div class="hero-stats compact-stats">
+                        <div class="stat">
+                            <span id="statCategories">0</span>
+                            <small>Categories</small>
+                        </div>
+                        <div class="stat">
+                            <span id="statCourses">0</span>
+                            <small>Courses</small>
+                        </div>
+                        <div class="stat">
+                            <span id="statLessons">0</span>
+                            <small>Lessons</small>
+                        </div>
+                        <div class="stat">
+                            <span id="statEnrolled">0</span>
+                            <small>Enrolled</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section reveal">
+            <h3>Learning Flow</h3>
+            <div class="quick-grid">
+                <a class="quick-card page-card" href="../HTML/categories.html">
+                    <span class="quick-step">1</span>
+                    <div>
+                        <strong>Categories</strong>
+                        <p>Pick your interest area before selecting courses.</p>
+                    </div>
+                </a>
+                <a class="quick-card page-card" href="../HTML/courses.html">
+                    <span class="quick-step">2</span>
+                    <div>
+                        <strong>Courses</strong>
+                        <p>Enroll or subscribe, then open lesson content.</p>
+                    </div>
+                </a>
+                <a class="quick-card page-card" href="../HTML/lessons.html">
+                    <span class="quick-step">3</span>
+                    <div>
+                        <strong>Lessons</strong>
+                        <p>Watch lesson videos and move to quizzes.</p>
+                    </div>
+                </a>
+                <a class="quick-card page-card" href="../HTML/quiz.html">
+                    <span class="quick-step">4</span>
+                    <div>
+                        <strong>Quiz</strong>
+                        <p>Submit answers and save your progress.</p>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <section class="section reveal">
+            <h3>Explore Categories</h3>
+            <p class="section-hint">Choose a category to browse its courses.</p>
+            <div id="dashboardCourseContainer" class="card-grid"></div>
+            <div id="dashboardCourseEmpty" class="empty-state hidden">No categories available yet.</div>
+        </section>
+    </div>
+
+    <div id="previewModal" class="modal">
+        <div class="modal-backdrop" data-modal-close></div>
+        <div class="modal-card">
+            <button class="modal-close" type="button" data-modal-close>Close</button>
+            <div class="modal-header">
+                <span id="previewModalBadge" class="modal-badge hidden">Premium</span>
+                <h3 id="previewModalTitle">Course Preview</h3>
+                <p id="previewModalCategory" class="modal-category">Category</p>
+            </div>
+            <p id="previewModalDesc" class="modal-desc">Course description</p>
+            <div id="previewModalThumb" class="preview-thumb"></div>
+            <div class="modal-actions">
+                <button id="previewEnrollBtn" class="btn hero-btn" type="button">Go to Enroll</button>
+                <button class="btn ghost-btn" type="button" data-modal-close>Maybe Later</button>
+            </div>
+        </div>
+    </div>
+
+    <button id="backToTop" class="back-to-top" aria-label="Back to top">Top</button>
+
+    <script src="../JS/home.js"></script>
+    <footer class="site-footer">
+        <div class="footer-main">
+            <span>&copy; <span class="current-year"></span> All rights reserved LearnHub</span>
+        </div>
+        <nav class="footer-links">
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact Us</a>
+            <a href="feedback.html">Feedback</a>
+        </nav>
+    </footer>
+
+    <script src="../../Assets/footer.js"></script>
+</body>
+
+</html>
+
+

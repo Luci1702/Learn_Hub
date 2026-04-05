@@ -1,0 +1,614 @@
+/* ================= GLOBAL RESET ================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ================= ROOT VARIABLES (CONSISTENT DESIGN SYSTEM) ================= */
+:root {
+    --primary: #00c6ff;
+    --primary-dark: #0072ff;
+    --primary-light: #5ce0ff;
+    --admin-gold: #ffc107;
+    --admin-gold-dark: #ff9800;
+    --admin-gold-light: #ffd54f;
+    --text-light: #ffffff;
+    --text-light-secondary: rgba(255, 255, 255, 0.85);
+    --overlay-dark: rgba(0, 0, 0, 0.6);
+    --glass-bg: rgba(255, 255, 255, 0.1);
+    --glass-admin: rgba(255, 193, 7, 0.1);
+    --glass-border: rgba(255, 255, 255, 0.15);
+    --input-bg: rgba(0, 0, 0, 0.3);
+    --blur: blur(12px);
+    --shadow-light: rgba(0, 198, 255, 0.2);
+    --shadow-gold: rgba(255, 193, 7, 0.3);
+    --shadow-dark: rgba(0, 0, 0, 0.4);
+    --gradient-primary: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    --gradient-gold: linear-gradient(135deg, var(--admin-gold), var(--admin-gold-dark));
+    --gradient-bg: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+}
+
+/* ================= BASE STYLES ================= */
+html, body {
+    width: 100%;
+    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow-x: hidden;
+    position: relative;
+    color: var(--text-light);
+}
+
+/* Smooth scroll behavior */
+html {
+    scroll-behavior: smooth;
+}
+
+/* ================= BACKGROUND ================= */
+body {
+    background: var(--gradient-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    animation: gradientShift 8s ease infinite;
+    background-size: 300% 300%;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* ================= OVERLAY BACKGROUND ================= */
+.bg {
+    position: fixed;
+    inset: 0;
+    background: var(--overlay-dark);
+    z-index: -1;
+    animation: overlayFade 1.5s ease-out;
+}
+
+@keyframes overlayFade {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* ================= MAIN CONTAINER ================= */
+.main_container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    animation: containerSlide 1s ease-out;
+}
+
+@keyframes containerSlide {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ================= CONTAINER ================= */
+.container {
+    width: 100%;
+    max-width: 400px;
+}
+
+/* ================= FORMS CONTAINER ================= */
+.forms {
+    background: var(--glass-admin);
+    backdrop-filter: var(--blur);
+    -webkit-backdrop-filter: var(--blur);
+    border-radius: 20px;
+    padding: 40px 35px;
+    box-shadow: 
+        0 20px 50px var(--shadow-dark),
+        0 0 60px rgba(255, 193, 7, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--glass-border);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    animation: formAppear 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Glow effect */
+.forms::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: var(--gradient-gold);
+    border-radius: 22px;
+    z-index: -1;
+    opacity: 0.2;
+    filter: blur(15px);
+}
+
+@keyframes formAppear {
+    from {
+        opacity: 0;
+        transform: scale(0.9) translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+/* Hover lift */
+.forms:hover {
+    transform: translateY(-8px);
+    box-shadow: 
+        0 30px 60px rgba(0, 0, 0, 0.5),
+        0 0 80px rgba(255, 193, 7, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+/* ================= HEADING ================= */
+.forms h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.2rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--admin-gold-light);
+    text-shadow: 0 2px 10px rgba(255, 193, 7, 0.3);
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.forms h1::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: var(--gradient-gold);
+    border-radius: 2px;
+    animation: lineGrow 1.5s ease-out;
+}
+
+/* ================= CAMPUS THEME OVERRIDES ================= */
+:root {
+    --primary: #4fd1ff;
+    --primary-dark: #1e90ff;
+    --primary-light: #7ee8ff;
+    --admin-gold: #00f5d4;
+    --admin-gold-dark: #00c9af;
+    --admin-gold-light: #5affea;
+    --text-light: #e6f1ff;
+    --text-light-secondary: rgba(230, 241, 255, 0.75);
+    --overlay-dark: rgba(6, 10, 20, 0.7);
+    --glass-bg: rgba(10, 16, 30, 0.7);
+    --glass-admin: rgba(10, 16, 30, 0.7);
+    --glass-border: rgba(79, 209, 255, 0.2);
+    --input-bg: rgba(10, 16, 30, 0.6);
+    --shadow-light: rgba(79, 209, 255, 0.25);
+    --shadow-gold: rgba(0, 245, 212, 0.25);
+    --shadow-dark: rgba(0, 0, 0, 0.45);
+    --gradient-primary: linear-gradient(135deg, #4fd1ff, #1e90ff);
+    --gradient-gold: linear-gradient(135deg, #00f5d4, #1e90ff);
+    --gradient-bg: linear-gradient(135deg, #0b1120, #0f1b2d, #10253a);
+}
+
+html, body {
+    font-family: 'Space Grotesk', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.forms {
+    background: var(--glass-admin);
+    border: 1px solid var(--glass-border);
+}
+
+.forms h1 {
+    color: var(--text-light);
+    text-shadow: 0 2px 14px rgba(79, 209, 255, 0.35);
+}
+
+@keyframes lineGrow {
+    from {
+        width: 0;
+    }
+    to {
+        width: 80px;
+    }
+}
+
+/* ================= INPUT FIELDS ================= */
+.forms input[type="text"],
+.forms input[type="password"] {
+    width: 100%;
+    padding: 16px 20px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: var(--input-bg);
+    color: var(--text-light);
+    font-size: 16px;
+    outline: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    margin-bottom: 20px;
+    box-shadow: 
+        inset 0 2px 4px rgba(0, 0, 0, 0.2),
+        0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Placeholder color */
+.forms input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+    font-weight: 300;
+}
+
+/* Focus effect */
+.forms input:focus {
+    border-color: var(--admin-gold);
+    background: rgba(0, 0, 0, 0.4);
+    box-shadow: 
+        inset 0 2px 4px rgba(0, 0, 0, 0.2),
+        0 6px 20px rgba(255, 193, 7, 0.25);
+    transform: translateY(-2px);
+}
+
+/* ================= SUBMIT BUTTON ================= */
+.forms input[type="submit"] {
+    width: 100%;
+    padding: 16px 30px;
+    border-radius: 12px;
+    border: none;
+    background: var(--gradient-gold);
+    color: #000;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    margin-top: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 
+        0 10px 25px rgba(255, 193, 7, 0.4),
+        0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Button hover */
+.forms input[type="submit"]:hover {
+    transform: translateY(-4px) scale(1.03);
+    box-shadow: 
+        0 20px 40px rgba(255, 193, 7, 0.5),
+        0 8px 25px rgba(0, 0, 0, 0.4);
+    letter-spacing: 1.2px;
+}
+
+/* Button click */
+.forms input[type="submit"]:active {
+    transform: translateY(-1px) scale(1.01);
+    box-shadow: 
+        0 8px 20px rgba(255, 193, 7, 0.3),
+        0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Button shine effect */
+.forms input[type="submit"]::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.3),
+        transparent
+    );
+    transition: left 0.6s;
+}
+
+.forms input[type="submit"]:hover::after {
+    left: 100%;
+}
+
+/* ================= FOOTER TEXT ================= */
+.forms h3 {
+    margin-top: 30px;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    color: var(--admin-gold);
+    text-align: center;
+    font-weight: 500;
+    padding: 12px 20px;
+    background: rgba(255, 193, 7, 0.1);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 193, 7, 0.2);
+    animation: warningPulse 3s ease-in-out infinite;
+}
+
+@keyframes warningPulse {
+    0%, 100% {
+        box-shadow: 0 0 0 rgba(255, 193, 7, 0.2);
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(255, 193, 7, 0.4);
+    }
+}
+
+/* ================= REMOVE <br> SPACING ================= */
+br {
+    display: none;
+}
+
+/* ================= RESPONSIVE DESIGN ================= */
+@media (max-width: 768px) {
+    .main_container {
+        padding: 15px;
+    }
+    
+    .forms {
+        padding: 35px 30px;
+        max-width: 350px;
+    }
+    
+    .forms h1 {
+        font-size: 1.9rem;
+    }
+    
+    .forms input[type="text"],
+    .forms input[type="password"] {
+        padding: 14px 18px;
+        font-size: 15px;
+    }
+    
+    .forms input[type="submit"] {
+        padding: 14px 25px;
+        font-size: 15px;
+    }
+    
+    .forms h3 {
+        font-size: 13px;
+        padding: 10px 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .forms {
+        padding: 30px 25px;
+        max-width: 320px;
+    }
+    
+    .forms h1 {
+        font-size: 1.7rem;
+    }
+    
+    .forms input[type="text"],
+    .forms input[type="password"] {
+        padding: 13px 16px;
+        font-size: 14px;
+    }
+    
+    .forms input[type="submit"] {
+        padding: 13px 22px;
+        font-size: 14px;
+    }
+    
+    .forms h3 {
+        font-size: 12px;
+        padding: 8px 14px;
+    }
+}
+
+@media (max-width: 360px) {
+    .forms {
+        padding: 25px 20px;
+    }
+    
+    .forms h1 {
+        font-size: 1.5rem;
+    }
+    
+    .forms input[type="text"],
+    .forms input[type="password"] {
+        padding: 12px 15px;
+        font-size: 13px;
+    }
+    
+    .forms input[type="submit"] {
+        padding: 12px 20px;
+        font-size: 13px;
+    }
+}
+
+/* ================= PREFERS-REDUCED-MOTION ================= */
+@media (prefers-reduced-motion: reduce) {
+    body,
+    .bg,
+    .main_container,
+    .forms,
+    .forms input[type="submit"],
+    .forms h3,
+    .forms h1::after {
+        animation: none !important;
+        transition: none !important;
+    }
+    
+    .main_container {
+        animation: containerSlide 1s ease-out !important;
+    }
+    
+    body {
+        animation: none !important;
+        background: #0f2027 !important;
+    }
+}
+
+/* ================= LOADING STATE ================= */
+.forms input[type="submit"].loading {
+    opacity: 0.8;
+    cursor: wait;
+    position: relative;
+    color: transparent;
+}
+
+.forms input[type="submit"].loading::before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(0, 0, 0, 0.3);
+    border-top-color: #000;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@keyframes spin {
+    to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* ================= INPUT VALIDATION STYLES ================= */
+.forms input.invalid {
+    border-color: #ff4444;
+    animation: shake 0.5s cubic-bezier(0.36, 0.07, 0.19, 0.97);
+}
+
+@keyframes shake {
+    10%, 90% { transform: translateX(-1px); }
+    20%, 80% { transform: translateX(2px); }
+    30%, 50%, 70% { transform: translateX(-3px); }
+    40%, 60% { transform: translateX(3px); }
+}
+
+.forms input.valid {
+    border-color: var(--admin-gold);
+}
+
+/* ================= SIMPLE EDUCATION LIGHT THEME ================= */
+:root {
+    --primary: #2f6feb;
+    --primary-dark: #2556b3;
+    --primary-light: #6ea3ff;
+    --admin-gold: #2f6feb;
+    --admin-gold-dark: #2556b3;
+    --admin-gold-light: #6ea3ff;
+    --text-light: #1f2a44;
+    --text-light-secondary: #5f6c85;
+    --overlay-dark: rgba(246, 248, 251, 0.95);
+    --glass-bg: #ffffff;
+    --glass-admin: #ffffff;
+    --glass-border: rgba(24, 34, 51, 0.12);
+    --input-bg: #ffffff;
+    --shadow-light: rgba(0, 0, 0, 0.06);
+    --shadow-gold: rgba(0, 0, 0, 0.08);
+    --shadow-dark: rgba(0, 0, 0, 0.08);
+    --gradient-primary: linear-gradient(135deg, #2f6feb, #4f7ff0);
+    --gradient-gold: linear-gradient(135deg, #2f6feb, #4f7ff0);
+    --gradient-bg: linear-gradient(135deg, #f6f8fb, #eef2f7, #f6f8fb);
+}
+
+body {
+    background: #f6f8fb;
+    color: #182233;
+    animation: none;
+}
+
+.bg {
+    background: rgba(246, 248, 251, 0.95);
+}
+
+.forms {
+    background: #ffffff;
+    border: 1px solid rgba(24, 34, 51, 0.12);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+}
+
+.forms::before {
+    display: none;
+}
+
+.forms:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.1);
+}
+
+.forms h1 {
+    color: #182233;
+    text-shadow: none;
+}
+
+.forms h1::after {
+    background: var(--primary);
+}
+
+.forms input[type="text"],
+.forms input[type="password"] {
+    background: #ffffff;
+    color: #182233;
+    border: 1px solid rgba(24, 34, 51, 0.15);
+    box-shadow: none;
+}
+
+.forms input::placeholder {
+    color: #7a879e;
+}
+
+.forms input:focus {
+    border-color: var(--primary);
+    background: #ffffff;
+    box-shadow: 0 0 0 3px rgba(47, 111, 235, 0.12);
+    transform: none;
+}
+
+.forms input[type="submit"] {
+    background: var(--primary);
+    color: #ffffff;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+    text-transform: none;
+}
+
+.forms input[type="submit"]::after {
+    display: none;
+}
+
+.forms h3 {
+    color: #5f6c85;
+    background: rgba(47, 111, 235, 0.08);
+    border-color: rgba(47, 111, 235, 0.2);
+    animation: none;
+}
+/* ================= GLOBAL BLUE BUTTONS ================= */
+button,
+.btn,
+a.btn,
+input[type="submit"],
+.logout-btn {
+    background: #2f6feb !important;
+    color: #ffffff !important;
+    border-color: #2f6feb !important;
+}
+
+button:hover,
+.btn:hover,
+a.btn:hover,
+input[type="submit"]:hover,
+.logout-btn:hover {
+    background: #2556b3 !important;
+    border-color: #2556b3 !important;
+}

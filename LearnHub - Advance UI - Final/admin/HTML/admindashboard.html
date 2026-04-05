@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LearnHub | Admin Dashboard</title>
+    <link rel="stylesheet" href="../CSS/adminDashboard.css">
+    <link rel="stylesheet" href="../../Assets/footer.css">
+
+</head>
+
+<body data-page="overview">
+
+<header class="admin-header">
+    <div class="admin-header-content">
+        <div>
+            <h1>Admin Dashboard</h1>
+            <p>Manage categories, courses, content, and users from one place.</p>
+        </div>
+        <button class="logout-btn" onclick="logoutAdmin()">Logout</button>
+    </div>
+    <nav class="admin-nav">
+        <a href="../HTML/admindashboard.html" class="active">Overview</a>
+        <a href="../HTML/adminCategories.html">Categories</a>
+        <a href="../HTML/adminCourses.html">Courses</a>
+        <a href="../HTML/adminContent.html">Content</a>
+        <a href="../HTML/adminMcq.html">MCQs</a>
+        <a href="../HTML/adminPurchases.html">Premium</a>
+        <a href="../HTML/adminFeedback.html">Feedback</a>
+        <a href="../HTML/adminUsers.html">Users</a>
+    </nav>
+</header>
+
+<main class="admin-container">
+    <section class="admin-hero">
+        <div class="hero-card">
+            <h2>Operations Hub</h2>
+            <p>Use the navigation to manage every learning module. Each area is split into a dedicated page for faster workflows.</p>
+            <div class="hero-actions">
+                <a class="btn primary" href="../HTML/adminCourses.html">Manage Courses</a>
+                <a class="btn ghost" href="../HTML/adminUsers.html">View Users</a>
+            </div>
+        </div>
+        <div class="hero-grid">
+            <div class="stat-card">
+                <h3>Total Students</h3>
+                <div id="totalStudents" class="number">0</div>
+            </div>
+            <div class="stat-card">
+                <h3>Categories</h3>
+                <div id="totalCategories" class="number">0</div>
+            </div>
+            <div class="stat-card">
+                <h3>Courses</h3>
+                <div id="totalCourses" class="number">0</div>
+            </div>
+            <div class="stat-card">
+                <h3>Premium Purchases</h3>
+                <div id="totalPremium" class="number">0</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="overview-grid">
+        <a class="overview-card" href="../HTML/adminCategories.html">
+            <h3>Categories</h3>
+            <p>Create and organize learning tracks.</p>
+        </a>
+        <a class="overview-card" href="../HTML/adminCourses.html">
+            <h3>Courses</h3>
+            <p>Launch new courses and premium offers.</p>
+        </a>
+        <a class="overview-card" href="../HTML/adminContent.html">
+            <h3>Content</h3>
+            <p>Add lesson videos and learning chapters.</p>
+        </a>
+        <a class="overview-card" href="../HTML/adminMcq.html">
+            <h3>MCQs</h3>
+            <p>Build quizzes and update question banks.</p>
+        </a>
+        <a class="overview-card" href="../HTML/adminPurchases.html">
+            <h3>Premium</h3>
+            <p>Monitor premium access and subscriptions.</p>
+        </a>
+        <a class="overview-card" href="../HTML/adminUsers.html">
+            <h3>Users</h3>
+            <p>Manage student accounts and enrollments.</p>
+        </a>
+    </section>
+</main>
+
+<script src="../JS/adminDashboard.js"></script>
+    <footer class="site-footer">
+        <div class="footer-main">
+            <span>&copy; <span class="current-year"></span> All rights reserved LearnHub</span>
+        </div>
+        <nav class="footer-links">
+            <a href="../../user/HTML/about.html">About Us</a>
+            <a href="../../user/HTML/contact.html">Contact Us</a>
+            <a href="../../user/HTML/feedback.html">Feedback</a>
+        </nav>
+    </footer>
+
+    <script src="../../Assets/footer.js"></script>
+</body>
+</html>
+
+
+

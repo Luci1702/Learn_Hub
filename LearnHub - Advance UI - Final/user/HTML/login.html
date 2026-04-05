@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LearnHub | Login</title>
+    <link rel="stylesheet" href="../CSS/login.css">
+    <link rel="stylesheet" href="../../Assets/footer.css">
+
+</head>
+
+<body>
+    <div class="bg"></div>
+
+    <div class="main_container">
+        <div class="container">
+            <div class="register">
+                <div class="forms">
+                    <center>
+                        <h1 style="color: blanchedalmond;">Student Login</h1>
+                    </center>
+
+                    <!-- Full name not required for login (optional) -->
+                    <!-- <input type="text" id="uFullName" placeholder="Enter User Full Name"><br><br> -->
+
+                    <input 
+                        type="email" 
+                        id="uEmail" 
+                        placeholder="Enter E-mail"
+                    ><br><br>
+
+                    <input 
+                        type="password" 
+                        id="uPassword1" 
+                        placeholder="Enter Password"
+                    ><br><br>
+
+                    <input 
+                        type="submit" 
+                        value="Login" 
+                        onclick="loginUser()"
+                    >
+
+                    <b>
+                        <center>
+                            <h3 style="color: rgb(235, 0, 247);">New User?</h3>
+                        </center>
+                    </b>
+
+                     <center>
+                        <h3>
+                            <a href="../HTML/register.html">Register</a>
+                        </h3>
+                    </center>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JS at bottom -->
+    <script src="../JS/login.js"></script>
+    <footer class="site-footer">
+        <div class="footer-main">
+            <span>&copy; <span class="current-year"></span> All rights reserved LearnHub</span>
+        </div>
+        <nav class="footer-links">
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact Us</a>
+            <a href="feedback.html">Feedback</a>
+        </nav>
+    </footer>
+
+    <script src="../../Assets/footer.js"></script>
+</body>
+</html>
+
+

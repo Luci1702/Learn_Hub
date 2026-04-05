@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LearnHub | Lessons</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../CSS/home.css">
+    <link rel="stylesheet" href="../../Assets/footer.css">
+
+</head>
+
+<body data-page="lessons">
+
+    <header class="top-header">
+        <div class="header-left">
+            <h1>Lessons</h1>
+            <p class="header-subtitle">Step 3: Watch lessons and move to quiz attempts.</p>
+        </div>
+
+        <div class="user-menu">
+            <button id="userBtn"></button>
+            <div class="dropdown">
+                <a href="../HTML/home.html">Dashboard</a>
+                <a href="../HTML/courses.html">Courses</a>
+                <a href="../HTML/userProfile.html">Profile</a>
+                <a href="#" onclick="logoutUser()">Logout</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <section class="section reveal">
+            <h3>Course: <span id="lessonCourseTitle">Selected Course</span></h3>
+            <div class="section-toolbar">
+                <p class="section-hint">Open a lesson and click "Take Quiz" when ready.</p>
+                <a class="btn ghost-btn" href="../HTML/courses.html">Back to Courses</a>
+            </div>
+            <div id="contentContainer" class="card-grid"></div>
+        </section>
+    </div>
+
+    <button id="backToTop" class="back-to-top" aria-label="Back to top">Top</button>
+
+    <script src="../JS/home.js"></script>
+    <footer class="site-footer">
+        <div class="footer-main">
+            <span>&copy; <span class="current-year"></span> All rights reserved LearnHub</span>
+        </div>
+        <nav class="footer-links">
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact Us</a>
+            <a href="feedback.html">Feedback</a>
+        </nav>
+    </footer>
+
+    <script src="../../Assets/footer.js"></script>
+</body>
+
+</html>
+
+

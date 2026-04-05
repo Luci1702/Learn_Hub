@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <link rel="stylesheet" href="../CSS/userProfile.css">
+    <link rel="stylesheet" href="../../Assets/footer.css">
+
+</head>
+<body>
+
+    <div class="profile-container">
+        <div class="profile-header">
+            <div>
+                <h1 style="color: #2c3e50; margin-bottom: 10px;">👤 User Profile</h1>
+                <p class="profile-subtitle">Manage your account and track learning progress.</p>
+            </div>
+            <a class="back-link" href="../HTML/home.html">Back to Dashboard</a>
+        </div>
+
+        <!-- Profile Information Section -->
+        <div class="profile-section">
+            <h2>Account Information</h2>
+            <div class="profile-field">
+                <label>Username</label>
+                <input type="text" id="profileName" disabled>
+            </div>
+
+            <div class="profile-field">
+                <label>Email</label>
+                <input type="email" id="profileEmail" disabled>
+            </div>
+
+            <div class="profile-field">
+                <label>Password</label>
+                <div class="input-with-action">
+                    <input type="password" id="profilePassword" disabled>
+                    <button class="toggle-btn" id="togglePassword" type="button" onclick="togglePassword()">Show</button>
+                </div>
+            </div>
+
+            <div class="button-group">
+                <button id="editBtn" onclick="enableEdit()">Edit Profile</button>
+                <button id="saveBtn" onclick="saveProfile()" style="display:none;">
+                    Save Changes
+                </button>
+            </div>
+        </div>
+
+        <!-- Learning Progress Section -->
+        <div class="profile-section">
+            <h2>📊 Learning Progress</h2>
+            <div class="profile-field">
+                <label>Overall Progress</label>
+                <div id="progressText" style="margin-bottom: 10px; font-size: 14px; color: #666;">
+                    Loading progress...
+                </div>
+                
+                <div class="progress-bar-container" style="height: 20px;">
+                    <div id="progressBar" class="progress-bar"></div>
+                </div>
+            </div>
+            <div class="quick-stats" id="quickStats"></div>
+        </div>
+
+        <!-- Enrolled Courses will be inserted here by JavaScript -->
+
+    </div>
+
+    <script src="../JS/userProfile.js"></script>
+    <footer class="site-footer">
+        <div class="footer-main">
+            <span>&copy; <span class="current-year"></span> All rights reserved LearnHub</span>
+        </div>
+        <nav class="footer-links">
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact Us</a>
+            <a href="feedback.html">Feedback</a>
+        </nav>
+    </footer>
+
+    <script src="../../Assets/footer.js"></script>
+</body>
+</html>
+
+

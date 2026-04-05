@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LearnHub | Categories</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../CSS/home.css">
+    <link rel="stylesheet" href="../../Assets/footer.css">
+
+</head>
+
+<body data-page="categories">
+
+    <header class="top-header">
+        <div class="header-left">
+            <h1>Course Categories</h1>
+            <p class="header-subtitle">Choose a category to see related courses.</p>
+        </div>
+
+        <div class="user-menu">
+            <button id="userBtn"></button>
+            <div class="dropdown">
+                <a href="../HTML/home.html">Dashboard</a>
+                <a href="../HTML/userProfile.html">Profile</a>
+                <a href="#" onclick="logoutUser()">Logout</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <section class="section reveal">
+            <h3>Select Category</h3>
+            <p class="section-hint">Tap a category to continue.</p>
+            <div id="categoryContainer" class="card-grid"></div>
+        </section>
+    </div>
+
+    <button id="backToTop" class="back-to-top" aria-label="Back to top">Top</button>
+
+    <script src="../JS/home.js"></script>
+    <footer class="site-footer">
+        <div class="footer-main">
+            <span>&copy; <span class="current-year"></span> All rights reserved LearnHub</span>
+        </div>
+        <nav class="footer-links">
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact Us</a>
+            <a href="feedback.html">Feedback</a>
+        </nav>
+    </footer>
+
+    <script src="../../Assets/footer.js"></script>
+</body>
+
+</html>
+
+

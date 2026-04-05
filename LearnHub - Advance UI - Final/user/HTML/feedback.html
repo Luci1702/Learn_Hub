@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LearnHub | Feedback</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../CSS/infoPages.css">
+    <link rel="stylesheet" href="../../Assets/footer.css">
+</head>
+
+<body>
+    <header class="simple-header">
+        <a class="back-link" href="./home.html">Back to Dashboard</a>
+        <h1>Feedback</h1>
+        <p>Your feedback helps us improve the LearnHub experience for everyone.</p>
+    </header>
+
+    <main class="page-content">
+        <section class="info-card">
+            <h2>Feedback Form</h2>
+            <p>Please share your feedback below. You must be logged in to submit.</p>
+
+            <div class="feedback-user">
+                Logged in as: <strong id="feedbackUserName">Student</strong>
+            </div>
+
+            <form id="feedbackForm" class="feedback-form">
+                <label for="feedbackCourse">Course Name</label>
+                <select id="feedbackCourse" required></select>
+
+                <label for="feedbackContent">Content Name</label>
+                <select id="feedbackContent" required></select>
+
+                <label for="feedbackMessage">Your Feedback</label>
+                <textarea id="feedbackMessage" rows="6" placeholder="Write your feedback here..." required></textarea>
+
+                <button type="submit" class="btn">Submit Feedback</button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-main">
+            <span>&copy; <span class="current-year"></span> All rights reserved LearnHub</span>
+        </div>
+        <nav class="footer-links">
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact Us</a>
+            <a href="feedback.html">Feedback</a>
+        </nav>
+    </footer>
+
+    <script src="../../Assets/footer.js"></script>
+    <script src="../JS/feedback.js"></script>
+</body>
+
+</html>
+
+

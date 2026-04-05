@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LearnHub | Courses</title>
+    <link rel="stylesheet" href="../CSS/adminDashboard.css">
+    <link rel="stylesheet" href="../../Assets/footer.css">
+
+</head>
+
+<body data-page="courses">
+
+<header class="admin-header">
+    <div class="admin-header-content">
+        <div>
+            <h1>Courses</h1>
+            <p>Launch courses and define premium access.</p>
+        </div>
+        <button class="logout-btn" onclick="logoutAdmin()">Logout</button>
+    </div>
+    <nav class="admin-nav">
+        <a href="../HTML/admindashboard.html">Overview</a>
+        <a href="../HTML/adminCategories.html">Categories</a>
+        <a href="../HTML/adminCourses.html" class="active">Courses</a>
+        <a href="../HTML/adminContent.html">Content</a>
+        <a href="../HTML/adminMcq.html">MCQs</a>
+        <a href="../HTML/adminPurchases.html">Premium</a>
+        <a href="../HTML/adminFeedback.html">Feedback</a>
+        <a href="../HTML/adminUsers.html">Users</a>
+    </nav>
+</header>
+
+<main class="admin-container">
+    <section class="admin-section">
+        <div class="section-header">
+            <h2>Manage Courses</h2>
+            <p>Add new courses with descriptions and premium flags.</p>
+        </div>
+        <div class="form-grid">
+            <select id="courseCategory">
+                <option value="">Select Category</option>
+            </select>
+            <input type="text" id="courseName" placeholder="Enter course name">
+            <textarea id="courseDescription" placeholder="Course description (optional)"></textarea>
+            <label class="checkbox-row">
+                <input type="checkbox" id="isPremiumCourse">
+                Mark this course as Premium
+            </label>
+            <button onclick="addCourse()" class="btn primary">Add Course</button>
+        </div>
+        <ul id="courseList" class="card-list"></ul>
+    </section>
+</main>
+
+<script src="../JS/adminDashboard.js"></script>
+    <footer class="site-footer">
+        <div class="footer-main">
+            <span>&copy; <span class="current-year"></span> All rights reserved LearnHub</span>
+        </div>
+        <nav class="footer-links">
+            <a href="../../user/HTML/about.html">About Us</a>
+            <a href="../../user/HTML/contact.html">Contact Us</a>
+            <a href="../../user/HTML/feedback.html">Feedback</a>
+        </nav>
+    </footer>
+
+    <script src="../../Assets/footer.js"></script>
+</body>
+</html>
+
+
+

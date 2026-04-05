@@ -1,0 +1,560 @@
+/* ================= GLOBAL RESET ================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ================= ROOT VARIABLES (USE EVERYWHERE) ================= */
+:root {
+    --primary: #00c6ff;
+    --primary-dark: #0072ff;
+    --primary-light: #5ce0ff;
+    --text-light: #ffffff;
+    --text-light-secondary: rgba(255, 255, 255, 0.85);
+    --overlay-dark: rgba(0, 0, 0, 0.5);
+    --glass-bg: rgba(255, 255, 255, 0.1);
+    --glass-border: rgba(255, 255, 255, 0.15);
+    --blur: blur(12px);
+    --shadow-light: rgba(0, 198, 255, 0.2);
+    --shadow-dark: rgba(0, 0, 0, 0.3);
+    --gradient-primary: linear-gradient(135deg, var(--primary), var(--primary-dark));
+}
+
+/* ================= BASE STYLES ================= */
+html, body {
+    width: 100%;
+    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Smooth scroll behavior */
+html {
+    scroll-behavior: smooth;
+}
+
+/* ================= BACKGROUND VIDEO ================= */
+.bg-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2;
+    filter: blur(4px) brightness(0.6);
+    animation: videoFadeIn 1.5s ease-out;
+}
+
+/* ================= DARK OVERLAY ================= */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: var(--overlay-dark);
+    z-index: -1;
+    animation: overlayFade 2s ease-out;
+}
+
+/* ================= CENTER CONTENT ================= */
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.site-footer {
+    width: 100%;
+    margin-top: auto;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+body {
+    padding-bottom: 100px;
+}
+
+/* ================= HERO / OVERLAY ================= */
+.overlay {
+    text-align: center;
+    color: var(--text-light);
+    padding: 50px 40px;
+    border-radius: 24px;
+    background: var(--glass-bg);
+    backdrop-filter: var(--blur);
+    -webkit-backdrop-filter: var(--blur);
+    border: 1px solid var(--glass-border);
+    box-shadow: 
+        0 20px 40px var(--shadow-dark),
+        0 0 60px rgba(0, 198, 255, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    max-width: 600px;
+    width: 100%;
+    animation: fadeSlide 1.2s ease forwards, float 6s ease-in-out infinite;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Subtle floating effect */
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* Glow effect around overlay */
+.overlay::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: var(--gradient-primary);
+    border-radius: 26px;
+    z-index: -1;
+    opacity: 0.2;
+    filter: blur(20px);
+}
+
+/* ================= TEXT STYLES ================= */
+.overlay h1 {
+    font-size: 3.5rem;
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+    font-weight: 700;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 0 2px 10px rgba(0, 198, 255, 0.3);
+    animation: textGlow 3s ease-in-out infinite alternate;
+}
+
+.overlay p {
+    font-size: 1.4rem;
+    margin: 20px 0 40px;
+    color: var(--text-light-secondary);
+    font-weight: 300;
+    letter-spacing: 1px;
+    line-height: 1.6;
+}
+
+/* Subtle text animation */
+@keyframes textGlow {
+    from {
+        text-shadow: 0 2px 10px rgba(0, 198, 255, 0.3);
+    }
+    to {
+        text-shadow: 0 2px 20px rgba(0, 198, 255, 0.6), 0 0 30px rgba(0, 198, 255, 0.2);
+    }
+}
+
+/* ================= BUTTON ================= */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 16px 42px;
+    background: var(--gradient-primary);
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border: none;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 
+        0 10px 30px rgba(0, 198, 255, 0.3),
+        0 5px 15px rgba(0, 0, 0, 0.2);
+    min-width: 200px;
+}
+
+/* Button hover effect with shine */
+.btn:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 
+        0 20px 40px rgba(0, 198, 255, 0.4),
+        0 10px 25px rgba(0, 0, 0, 0.3);
+    letter-spacing: 1.5px;
+}
+
+/* Button active state */
+.btn:active {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 
+        0 10px 20px rgba(0, 198, 255, 0.3),
+        0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Button shine effect */
+.btn::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.2),
+        transparent
+    );
+    transition: left 0.6s;
+}
+
+.btn:hover::after {
+    left: 100%;
+}
+
+/* ================= ANIMATIONS ================= */
+@keyframes fadeSlide {
+    from {
+        opacity: 0;
+        transform: translateY(40px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes videoFadeIn {
+    from {
+        opacity: 0;
+        transform: scale(1.1);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes overlayFade {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* ================= RESPONSIVE DESIGN ================= */
+@media (max-width: 768px) {
+    .overlay {
+        width: 95%;
+        padding: 40px 30px;
+        border-radius: 20px;
+    }
+
+    .overlay h1 {
+        font-size: 2.8rem;
+        letter-spacing: 1.5px;
+    }
+
+    .overlay p {
+        font-size: 1.2rem;
+        margin: 15px 0 35px;
+    }
+
+    .btn {
+        padding: 15px 35px;
+        font-size: 1rem;
+        min-width: 180px;
+    }
+    
+    /* Reduce floating animation on mobile */
+    .overlay {
+        animation: fadeSlide 1.2s ease forwards;
+    }
+}
+
+@media (max-width: 480px) {
+    .overlay {
+        padding: 30px 20px;
+        border-radius: 18px;
+    }
+
+    .overlay h1 {
+        font-size: 2.2rem;
+        letter-spacing: 1px;
+    }
+
+    .overlay p {
+        font-size: 1rem;
+        margin: 12px 0 30px;
+        line-height: 1.5;
+    }
+
+    .btn {
+        padding: 14px 30px;
+        font-size: 0.95rem;
+        min-width: 160px;
+    }
+    
+    body {
+        padding: 15px;
+    }
+}
+
+/* For very small screens */
+@media (max-width: 360px) {
+    .overlay h1 {
+        font-size: 1.8rem;
+    }
+    
+    .overlay p {
+        font-size: 0.9rem;
+    }
+    
+    .btn {
+        padding: 12px 25px;
+        font-size: 0.9rem;
+    }
+}
+
+/* ================= PREFERS-REDUCED-MOTION ================= */
+@media (prefers-reduced-motion: reduce) {
+    .overlay,
+    .bg-video,
+    body::before,
+    .btn,
+    .overlay h1 {
+        animation: none !important;
+        transition: none !important;
+    }
+    
+    .overlay {
+        animation: fadeSlide 1.2s ease forwards !important;
+    }
+}
+
+/* ================= LOADING STATES ================= */
+.btn.loading {
+    opacity: 0.8;
+    cursor: wait;
+}
+
+.btn.loading::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-top-color: white;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* ================= LEARNHUB CAMPUS THEME ================= */
+:root {
+    --primary: #4fd1ff;
+    --primary-dark: #1e90ff;
+    --primary-light: #7ee8ff;
+    --text-light: #e6f1ff;
+    --text-light-secondary: rgba(230, 241, 255, 0.7);
+    --overlay-dark: rgba(6, 10, 20, 0.65);
+    --glass-bg: rgba(10, 16, 30, 0.7);
+    --glass-border: rgba(79, 209, 255, 0.18);
+    --shadow-light: rgba(79, 209, 255, 0.25);
+    --shadow-dark: rgba(0, 0, 0, 0.45);
+    --gradient-primary: linear-gradient(135deg, var(--primary), var(--primary-dark));
+}
+
+html, body {
+    font-family: 'Space Grotesk', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body::before {
+    background: linear-gradient(135deg, rgba(8, 14, 26, 0.75), rgba(11, 20, 36, 0.8));
+}
+
+.bg-video {
+    filter: blur(6px) brightness(0.5) saturate(1.2);
+}
+
+.overlay {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    box-shadow:
+        0 25px 50px var(--shadow-dark),
+        0 0 80px rgba(79, 209, 255, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.overlay h1 {
+    text-shadow: 0 2px 14px rgba(79, 209, 255, 0.35);
+}
+
+.btn {
+    box-shadow: 0 12px 30px rgba(79, 209, 255, 0.35);
+}
+
+/* ================= THEME TOGGLE ================= */
+.theme-toggle {
+    padding: 8px 14px;
+    border-radius: 999px;
+    border: 1px solid rgba(79, 209, 255, 0.35);
+    background: rgba(10, 16, 30, 0.55);
+    color: var(--text-light);
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.theme-toggle.floating {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 10;
+}
+
+.theme-toggle:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(79, 209, 255, 0.3);
+}
+
+/* ================= LIGHT THEME ================= */
+body[data-theme="light"] {
+    --primary: #0072ff;
+    --primary-dark: #0056c7;
+    --primary-light: #5aa6ff;
+    --text-light: #1a2333;
+    --text-light-secondary: rgba(26, 35, 51, 0.75);
+    --overlay-dark: rgba(255, 255, 255, 0.7);
+    --glass-bg: rgba(255, 255, 255, 0.92);
+    --glass-border: rgba(0, 114, 255, 0.16);
+    --shadow-light: rgba(0, 114, 255, 0.15);
+    --shadow-dark: rgba(0, 0, 0, 0.12);
+    --gradient-primary: linear-gradient(135deg, #0072ff, #5aa6ff);
+}
+
+body[data-theme="light"]::before {
+    background: rgba(245, 248, 255, 0.85);
+}
+
+body[data-theme="light"] .bg-video {
+    filter: blur(4px) brightness(0.85);
+}
+
+body[data-theme="light"] .overlay {
+    background: var(--glass-bg);
+    border-color: var(--glass-border);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+}
+
+body[data-theme="light"] .theme-toggle {
+    color: var(--text-light);
+    background: rgba(255, 255, 255, 0.85);
+    border-color: rgba(0, 114, 255, 0.3);
+}
+
+/* ================= SIMPLE EDUCATION LIGHT THEME ================= */
+:root {
+    --primary: #2f6feb;
+    --primary-dark: #2556b3;
+    --primary-light: #6ea3ff;
+    --text-light: #1f2a44;
+    --text-light-secondary: #5f6c85;
+    --overlay-dark: rgba(246, 248, 251, 0.95);
+    --glass-bg: #ffffff;
+    --glass-border: rgba(24, 34, 51, 0.12);
+    --shadow-light: rgba(0, 0, 0, 0.06);
+    --shadow-dark: rgba(0, 0, 0, 0.08);
+    --gradient-primary: linear-gradient(135deg, #2f6feb, #4f7ff0);
+}
+
+body {
+    background: transparent;
+    color: #182233;
+}
+
+body::before {
+    background: transparent;
+}
+
+.bg-video {
+    filter: none;
+    opacity: 1;
+}
+
+.overlay {
+    background: transparent;
+    border: 1px solid rgba(24, 34, 51, 0.12);
+    box-shadow: none;
+    color: #182233;
+    animation: fadeSlide 1.2s ease forwards;
+}
+
+.overlay::before {
+    display: none;
+}
+
+.overlay h1 {
+    color: #182233;
+    background: none;
+    text-shadow: none;
+    animation: none;
+}
+
+.overlay p {
+    color: #5f6c85;
+}
+
+.btn {
+    background: var(--primary);
+    color: #ffffff;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+    letter-spacing: 0.5px;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.12);
+}
+
+.btn::after {
+    display: none;
+}
+
+.theme-toggle {
+    display: none !important;
+}
+
+
+/* ================= GLOBAL BLUE BUTTONS ================= */
+button,
+.btn,
+a.btn,
+input[type="submit"],
+.logout-btn {
+    background: #2f6feb !important;
+    color: #ffffff !important;
+    border-color: #2f6feb !important;
+}
+
+button:hover,
+.btn:hover,
+a.btn:hover,
+input[type="submit"]:hover,
+.logout-btn:hover {
+    background: #2556b3 !important;
+    border-color: #2556b3 !important;
+}
