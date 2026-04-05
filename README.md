@@ -24,6 +24,8 @@ At the same time, it includes a powerful Admin Panel UI to manage the entire sys
 💬 Feedback system
 👤 User profile management
 📄 Informational pages (About, Contact)
+
+
 🛠️ Admin Panel
 📊 Admin Dashboard
 👥 Manage Users
@@ -33,6 +35,8 @@ At the same time, it includes a powerful Admin Panel UI to manage the entire sys
 ❓ Manage MCQs
 💬 View Feedback
 💳 View Purchases
+
+
 🏗️ Project Structure
 LearnHub/
 │
@@ -49,17 +53,23 @@ LearnHub/
 │   ├── HTML/        → Admin dashboard pages
 │   ├── CSS/         → Admin styling
 │   ├── JS/          → Admin functionalities
+
+
 💻 Technologies Used
 🌐 HTML5
 🎨 CSS3 (Responsive Design)
 ⚡ JavaScript (Vanilla JS)
 🎥 Media Integration (Video & UI assets)
+
+
 🎨 UI Highlights
 Clean and modern design
 Fully responsive layout
 Smooth navigation between pages
 Structured dashboard interfaces
 Interactive elements using JavaScript
+
+
 📌 Purpose of the Project
 
 This project was developed to:
